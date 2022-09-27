@@ -62,8 +62,8 @@ class Text2Image:
         seed = seed + 1234*img_id
         # Tokenize prompt (i.e. starting context)
         inputs = self.tokenizer.encode(prompt)
-        assert len(inputs) < 77, "Prompt is too long!"
-        phrase = inputs + [49407] * (77 - len(inputs))
+        assert len(inputs) < MAX_TEXT_LEN, "Prompt is too long!"
+        phrase = inputs + [49407] * (MAX_TEXT_LEN - len(inputs))
         phrase = np.array(phrase)[None].astype("int32")
         phrase = np.repeat(phrase, batch_size, axis=0)
 
