@@ -11,7 +11,7 @@
                     placeholder="Enter your prompt here" 
                     style="border-radius: 12px 12px 12px 12px; border-color: rgba(0, 0, 0, 0.1);  width: calc(100%); resize: none; " 
                     class="form-control"  
-                    v-bind:class="{ 'disabled' : !stable_diffusion.is_input_avail}"
+                    v-bind:class="{ 'readonly' : !stable_diffusion.is_input_avail}"
                     rows="3"></textarea>
 
                 <div v-if="stable_diffusion.is_input_avail" class="content_toolbox" style="margin-top:10px; margin-bottom:-10px;">
